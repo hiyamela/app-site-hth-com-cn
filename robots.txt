@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://hiyamela.github.io/app-site-hth-com-cn/sitemap.xml
