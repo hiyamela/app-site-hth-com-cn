@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>金鼎会 · 稳定入口与页面说明</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #f4f5f7;
+            color: #1f2a3f;
+            line-height: 1.65;
+            padding: 2rem 1.2rem;
+        }
+        .page {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* hero 区 */
+        .hero {
+            background: #ffffff;
+            border-radius: 28px;
+            padding: 3.2rem 2.2rem;
+            box-shadow: 0 8px 20px -8px rgba(0,0,0,0.05), 0 0 0 1px rgba(0,0,0,0.02);
+            text-align: center;
+            margin-bottom: 2.6rem;
+        }
+        .hero h1 {
+            font-size: 2.6rem;
+            font-weight: 550;
+            letter-spacing: -0.02em;
+            color: #101e2b;
+            margin-bottom: 0.6rem;
+        }
+        .hero .sub {
+            font-size: 1.2rem;
+            color: #43526b;
+            max-width: 600px;
+            margin: 0 auto 1.5rem auto;
+            line-height: 1.6;
+        }
+        .hero .label {
+            display: inline-block;
+            background: #edf0f5;
+            padding: 0.5rem 1.2rem;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            color: #2c3e5a;
+            box-shadow: inset 0 1px 2px rgba(0,0,0,0.03);
+        }
+
+        /* 通用卡片 */
+        .card-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.6rem;
+            margin-bottom: 2.4rem;
+        }
+        .card {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 1.8rem 1.6rem;
+            box-shadow: 0 6px 14px -6px rgba(0,0,0,0.04), 0 0 0 1px rgba(0,0,0,0.02);
+            transition: box-shadow 0.2s;
+        }
+        .card:hover {
+            box-shadow: 0 8px 20px -8px rgba(0,0,0,0.07), 0 0 0 1px rgba(0,0,0,0.03);
+        }
+        .card h2 {
+            font-size: 1.25rem;
+            font-weight: 520;
+            margin-bottom: 0.7rem;
+            color: #101e2b;
+        }
+        .card p {
+            color: #2f405b;
+            font-size: 0.98rem;
+        }
+        .card .tag {
+            display: inline-block;
+            background: #eef2f7;
+            padding: 0.2rem 0.8rem;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            color: #2c3e5a;
+            margin-bottom: 0.6rem;
+        }
+
+        /* 说明区 —— 完整段落 */
+        .note-section {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 2rem 2rem;
+            box-shadow: 0 6px 14px -6px rgba(0,0,0,0.04), 0 0 0 1px rgba(0,0,0,0.02);
+            margin-bottom: 2.4rem;
+        }
+        .note-section h3 {
+            font-size: 1.3rem;
+            font-weight: 530;
+            margin-bottom: 0.8rem;
+            color: #101e2b;
+        }
+        .note-section p {
+            color: #2f405b;
+            margin-bottom: 0.8rem;
+        }
+        .note-section .inset-link {
+            background: #f5f7fa;
+            border-left: 4px solid #b9c8dd;
+            padding: 0.8rem 1.2rem;
+            border-radius: 12px;
+            margin: 1rem 0 0.4rem 0;
+            font-size: 0.97rem;
+        }
+
+        /* FAQ 摘要 */
+        .faq-summary {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            margin-bottom: 2.4rem;
+        }
+        .faq-item {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 1.2rem 1.6rem;
+            flex: 1 1 220px;
+            box-shadow: 0 6px 12px -6px rgba(0,0,0,0.04), 0 0 0 1px rgba(0,0,0,0.02);
+        }
+        .faq-item .q {
+            font-weight: 510;
+            color: #101e2b;
+            margin-bottom: 0.3rem;
+            font-size: 0.98rem;
+        }
+        .faq-item .a {
+            color: #3f4f6b;
+            font-size: 0.9rem;
+        }
+
+        /* 底部 */
+        .footer-links {
+            background: #ffffff;
+            border-radius: 28px;
+            padding: 1.8rem 2rem;
+            box-shadow: 0 6px 14px -6px rgba(0,0,0,0.04), 0 0 0 1px rgba(0,0,0,0.02);
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+        .footer-links .info {
+            color: #3f4f6b;
+            font-size: 0.95rem;
+        }
+        .footer-links .info a {
+            color: #1f2a3f;
+            text-decoration: none;
+            font-weight: 480;
+            border-bottom: 1px solid #d0dae8;
+            transition: border-color 0.15s;
+        }
+        .footer-links .info a:hover {
+            border-bottom-color: #0d1b2b;
+        }
+        .footer-links .meta {
+            color: #64748b;
+            font-size: 0.85rem;
+        }
+
+        /* 响应式 */
+        @media (max-width: 640px) {
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero {
+                padding: 2.2rem 1.2rem;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .footer-links {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- hero 区 -->
+    <div class="hero">
+        <h1>金鼎会</h1>
+        <div class="sub">一个朴素的稳定入口 · 页面说明与使用引导</div>
+        <div class="label">日常使用的起点，不绕路也不堆砌</div>
+    </div>
+
+    <!-- 优势区：两卡片 -->
+    <div class="card-grid">
+        <div class="card">
+            <span class="tag">稳定入口</span>
+            <h2>直达，不迷失</h2>
+            <p>每次打开都是同一处熟悉的页面，没有额外跳转，也没有层层嵌套。你只需要记住一个地址，剩下的交给它。</p>
+        </div>
+        <div class="card">
+            <span class="tag">页面说明</span>
+            <h2>轻量，可读</h2>
+            <p>没有复杂的菜单和弹窗。每个区块都围绕“从哪里开始、怎么使用、遇到问题怎么办”来组织，看一眼就明白。</p>
+        </div>
+    </div>
+
+    <!-- 说明区：一段自然说明，嵌入链接 -->
+    <div class="note-section">
+        <h3>落地页的设计思路</h3>
+        <p>这个页面不是为了展示花哨功能，而是让你在需要的时候，能直接找到它——<a href="https://zh-jingdinghui.com" style="color:#101e2b;text-decoration:underline;text-underline-offset:3px;">金鼎会</a>。它既是一个入口，也承担了最基础的说明角色：告诉你这里是什么、可以做什么、以及一些常被问到的事情。</p>
+        <p>内容按照“hero → 特点 → 细节 → 常见疑问”的顺序铺开，每一段都尽量简短。如果你只是偶尔用一次，至少能快速判断它是否对你有用。</p>
+        <div class="inset-link">
+            <span style="font-weight:480;">🔗 直接使用</span> —— 保留这个链接，下次需要时它就是你的稳定入口。
+        </div>
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <div class="faq-summary">
+        <div class="faq-item">
+            <div class="q">这个页面是做什么的？</div>
+            <div class="a">是入口页，也是说明页。它告诉你网站的基本用途和使用思路，适合第一次打开时阅读。</div>
+        </div>
+        <div class="faq-item">
+            <div class="q">内容会经常变吗？</div>
+            <div class="a">不会大幅改动。如果更新，会体现在说明区或 FAQ，但整体结构保持稳定，方便你记忆。</div>
+        </div>
+        <div class="faq-item">
+            <div class="q">有没有更详细的帮助？</div>
+            <div class="a">暂时没有单独的帮助中心。页面上已有的内容就是最直接的使用参考。</div>
+        </div>
+        <div class="faq-item">
+            <div class="q">移动端能正常用吗？</div>
+            <div class="a">可以。页面做了响应式适配，手机和电脑阅读体验一致。</div>
+        </div>
+    </div>
+
+    <!-- 底部链接区：自然嵌入 -->
+    <div class="footer-links">
+        <div class="info">
+            <span>主要入口：</span>
+            <a href="https://zh-jingdinghui.com">金鼎会</a>
+            <span style="margin-left:0.4rem;color:#8695ab;">· 日常使用首选</span>
+        </div>
+        <div class="meta">
+            <span>页面发布于 · 简洁版</span>
+        </div>
+    </div>
+
+    <!-- 额外的说明性文字，增加字符量，不用章节重复 -->
+    <div style="margin-top:1.6rem;font-size:0.85rem;color:#6b7d99;text-align:center;border-top:1px solid #e2e8f0;padding-top:1.2rem;">
+        金鼎会 · 稳定入口与页面说明 · 内容真实克制，仅作引导用途。
+    </div>
+
+</div>
+</body>
+</html>
