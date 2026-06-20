@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>爱游戏 · 日常与游戏的连接站</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #faf8f5;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', sans-serif;
+      color: #2c2c2c;
+      line-height: 1.7;
+      padding: 2.5rem 1.5rem;
+    }
+
+    .page {
+      max-width: 920px;
+      margin: 0 auto;
+      background: #fffcf9;
+      border-radius: 32px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+      overflow: hidden;
+    }
+
+    /* hero 区域 — 杂志式横幅 */
+    .hero {
+      background: #e8e2da;
+      padding: 3rem 2.5rem 2.8rem;
+      position: relative;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #b7ab98 0%, #dfd4c4 50%, #b7ab98 100%);
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 350;
+      letter-spacing: 1px;
+      color: #352f28;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero .kicker {
+      font-size: 1.1rem;
+      color: #5e5547;
+      border-left: 3px solid #a89984;
+      padding-left: 1rem;
+      margin-top: 0.3rem;
+      font-style: normal;
+    }
+
+    .hero .subnote {
+      margin-top: 1rem;
+      font-size: 0.95rem;
+      color: #5f574c;
+      background: rgba(255, 250, 240, 0.5);
+      padding: 0.4rem 1rem 0.4rem 1rem;
+      border-radius: 40px;
+      display: inline-block;
+      backdrop-filter: blur(2px);
+      font-weight: 400;
+    }
+
+    /* 正文内容区 — 三段自然介绍 + 提示 */
+    .content {
+      padding: 2.8rem 2.5rem 3rem;
+    }
+
+    .intro-section {
+      margin-bottom: 2.4rem;
+    }
+
+    .intro-section:last-of-type {
+      margin-bottom: 1.8rem;
+    }
+
+    .intro-section h2 {
+      font-size: 1.4rem;
+      font-weight: 480;
+      color: #3d352a;
+      margin-bottom: 0.6rem;
+      letter-spacing: 0.3px;
+      border-bottom: 1px solid #e2d9ce;
+      padding-bottom: 0.3rem;
+      display: inline-block;
+    }
+
+    .intro-section p {
+      margin: 0.8rem 0 0.2rem;
+      text-align: justify;
+    }
+
+    /* 引用 / 提示框 — 本次用淡米色块 */
+    .inset-box {
+      background: #f3efe8;
+      border-left: 5px solid #b7a690;
+      padding: 1.4rem 1.8rem;
+      margin: 2rem 0 1.8rem;
+      border-radius: 0 18px 18px 0;
+      font-size: 1rem;
+    }
+
+    .inset-box p {
+      margin: 0.3rem 0;
+    }
+
+    .inset-box strong {
+      color: #4f4538;
+    }
+
+    /* 尾部区域 */
+    .footer-note {
+      border-top: 1px solid #e7dfd5;
+      padding: 2rem 2.5rem 2.2rem;
+      background: #f7f3ed;
+      color: #3d382f;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+    }
+
+    .footer-note .visit-line {
+      font-size: 1.1rem;
+    }
+
+    .footer-note a {
+      color: #4f4233;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid #b7a68b;
+      padding-bottom: 1px;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .footer-note a:hover {
+      color: #1f1b15;
+      border-bottom-color: #1f1b15;
+    }
+
+    .footer-note .meta {
+      font-size: 0.9rem;
+      color: #766c5f;
+    }
+
+    /* 响应式 */
+    @media (max-width: 600px) {
+      body {
+        padding: 1.2rem 0.8rem;
+      }
+
+      .hero {
+        padding: 2rem 1.5rem 2rem;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .hero .kicker {
+        font-size: 0.95rem;
+        padding-left: 0.7rem;
+      }
+
+      .content {
+        padding: 2rem 1.5rem 2.2rem;
+      }
+
+      .intro-section h2 {
+        font-size: 1.2rem;
+      }
+
+      .inset-box {
+        padding: 1rem 1.2rem;
+      }
+
+      .footer-note {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1.5rem 1.5rem 1.8rem;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .hero .subnote {
+        font-size: 0.85rem;
+        padding: 0.3rem 0.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- hero 横幅 -->
+    <header class="hero">
+      <h1>爱游戏</h1>
+      <div class="kicker">日常的入口 · 游戏的温度</div>
+      <div class="subnote">一个可以慢慢熟悉的地方</div>
+    </header>
+
+    <!-- 三段自然介绍 + 提示框 -->
+    <div class="content">
+      <section class="intro-section">
+        <h2>从稳定出发</h2>
+        <p>很多人把游戏当作一种调剂，但真正让游戏融入生活的，是那个不需要反复确认的起点。没有复杂的跳转，也没有冗余的干扰，<a href="https://website-iyouxi.com">爱游戏</a>提供的是一种安静的落脚感——你打开它，就像推开一扇熟悉的门，里面的东西就在那里，不惊不扰。这种稳定，对日常而言，其实很珍贵。</p>
+      </section>
+
+      <section class="intro-section">
+        <h2>背景与日常</h2>
+        <p>一个站点背后往往有它自己的节奏。<strong>爱游戏</strong>并不试图制造喧嚣，而是把信息、内容和可能的交流，梳理成更接近阅读和浏览的状态。没有浮夸的弹窗，没有紧迫的倒计时，你看到的就是它想呈现的——干净、可读，并且尊重你的注意力。对于习惯安静浏览的人来说，这是一种难得的默契。</p>
+      </section>
+
+      <section class="intro-section">
+        <h2>三段式之外</h2>
+        <p>除了基础介绍，这里也慢慢沉淀了一些小篇幅的随笔与观察。从某个游戏的侧面，到平台使用的细微感受，记录本身比结论更重要。如果你也喜欢那种不急不躁的叙述，或许可以在某个闲下来的下午，从头到尾翻一翻。</p>
+      </section>
+
+      <!-- 引用块 / 提示框 替代FAQ摘要 -->
+      <div class="inset-box">
+        <p><strong>一点提示</strong> · 如果你刚接触这里，不妨从首页的几个分类开始浏览。站内没有复杂的注册流程，也没有信息轰炸。你随时可以来，也随时可以离开——像翻一本搁在茶几上的杂志。</p>
+        <p style="margin-top:0.7rem;">—— 保持自然，保持稳定，这是 <a href="https://website-iyouxi.com">爱游戏</a> 一直留意的方向。</p>
+      </div>
+    </div>
+
+    <!-- 页尾 访问提示 -->
+    <div class="footer-note">
+      <span class="visit-line">随时可以回来 · <a href="https://website-iyouxi.com">爱游戏</a></span>
+      <span class="meta">一个安静的起点，不赶时间</span>
+    </div>
+  </div>
+</body>
+</html>
